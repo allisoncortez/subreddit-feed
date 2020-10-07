@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import Article from './components/Article';
 
 function App() {
   const [articles, setArticles] = useState([]);
@@ -25,7 +26,9 @@ function App() {
       <header className="App-header">
         <input type="text" className="input" value="webdev"></input>
       </header>
-      <div className="articles"></div>
+      <div className="articles">
+        <Article />
+      </div>
     </div>
   );
 }
