@@ -14,8 +14,8 @@ function App() {
       
       res.json().then(data => {
         if (data != null) {
-          console.log(data)
-          // setArticles(data.data.children)
+          // console.log(data)
+          setArticles(data.data.children)
         }
       })
 })
@@ -27,7 +27,9 @@ function App() {
         <input type="text" className="input" value="webdev"></input>
       </header>
       <div className="articles">
-        <Article />
+        {
+          (articles != null) ? articles.map((article, index) => <Article key={index} article={article.data} />) : ''
+        }
       </div>
     </div>
   );
